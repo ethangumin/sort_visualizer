@@ -10,7 +10,7 @@ The data is displayed as a bar chart that, when activated, will shift its bars i
 
 <h1>Functionality & MVPs</h1>
 
-In "Sort Visualizer", users are be able to:
+In "Sort Visualizer," users are be able to:
 <ul>
     <li>Start and reset the visualization</li>
     <li>Select an algorithm</li>
@@ -37,9 +37,9 @@ In addition, this project will include:
             <li>Application Description/Instructions Modal</li>
         </ul>
     </li>
-    <li>Controls will include start and stop buttons.</li>
-    <li>The Algorithm Description Modal Button will display information about the current sorting algorithm.</li>
-    <li>Color scheme buttons toggle light/dark mode.</li>
+    <li>Controls will include start and stop buttons</li>
+    <li>The Algorithm Description Modal Button will display information about the current sorting algorithm</li>
+    <li>Color scheme buttons toggle light/dark mode</li>
 </ul>
 
 <br>
@@ -54,15 +54,15 @@ In addition, this project will include:
 <br>
 
 <h1>Implementation Timeline</h1>
-Friday Afternoon & Weekend: Research D3, set up project, and get webpack running. Get a chart to render on the screen.
+Friday Afternoon & Weekend: Research D3, set up project, and get chart to render on the screen
 
-Monday: Create bubble sort logic as well as responsive chart.
+Monday: Create bubble sort logic as well as responsive chart
 
-Tuesday: Implement modals and start/stop buttons.
+Tuesday: Implement modals and start/stop buttons
 
-Wednesday: Complete styling and begin bonus.
+Wednesday: Complete styling and begin bonus
 
-Thursday morning: Deploy on GitHub Pages.
+Thursday morning: Deploy on GitHub Pages
 
 <br>
 
