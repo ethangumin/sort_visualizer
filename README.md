@@ -2,7 +2,7 @@
 
 "Sort Visualizer" is an inuitive learning tool designed to help users better understand how different sorting algorithms work.
 
-The data is displayed as a histogram that, when activated, will shift its bars in the pattern of the chosen algorithm. Throughout this process, the color of each bar will change depending its status (sorted, unsorted, currently being sorted).
+The data is displayed as a bar chart that, when activated, will shift its bars in the pattern of the chosen algorithm. Throughout this process, the color of each bar will change depending its status (sorted, unsorted, currently being sorted).
 
 "Sort Visualizer" also contains a modal with details about the currently selected algorithm, showing information about how the algorithm sorts data, as well as its advantages/disadvantages and its time/space complexity.
 
