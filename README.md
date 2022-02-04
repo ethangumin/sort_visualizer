@@ -54,15 +54,23 @@ In addition, this project will include:
 <br>
 
 <h1>Implementation Timeline</h1>
-Friday Afternoon & Weekend: Research D3, set up project, and get chart to render on the screen
-
-Monday: Create bubble sort logic as well as responsive chart
-
-Tuesday: Implement modals and start/stop buttons
-
-Wednesday: Complete styling and begin bonus
-
-Thursday morning: Deploy on GitHub Pages
+<ul>
+    <li>
+        Friday Afternoon & Weekend: Research D3, set up project, and get chart to render on the screen
+    </li>
+    <li>
+        Monday: Create bubble sort logic as well as responsive chart
+    </li>
+    <li>
+        Tuesday: Implement modals and start/stop buttons
+    </li>
+    <li>
+        Wednesday: Complete styling and begin bonus
+    </li>
+    <li>
+        Thursday morning: Deploy on GitHub Pages
+    </li>
+</ul>
 
 <br>
 
