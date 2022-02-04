@@ -47,6 +47,7 @@ In addition, this project will include:
 <h1>Technologies, Libraries, APIs</h1>
 <h3>This application implements:</h3> 
 <ul>
+    <li>Javascript, HTML, CSS</li>
     <li>The D3 library to visualize data</li>
     <li>Webpack to bundle Javascript code</li>
 </ul>
@@ -65,10 +66,10 @@ In addition, this project will include:
         Tuesday: Implement modals and start/stop buttons
     </li>
     <li>
-        Wednesday: Complete styling and begin bonus
+        Wednesday: Begin bonus (add another alogorithm)
     </li>
     <li>
-        Thursday morning: Deploy on GitHub Pages
+        Thursday morning: finish up and deploy project
     </li>
 </ul>
 
