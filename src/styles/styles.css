@@ -14,3 +14,18 @@
 .chart {
     margin-top: 2em;
 }
+
+.sorted {
+    fill: rgba(0, 137, 216, 0.89);
+    transition: 0.3s;
+}
+
+.unsorted {
+    fill: rgb(95, 95, 95);
+}
+
+.sorting {
+    fill: rgb(233, 229, 33);
+    transition: 0.3s;
+}
+
