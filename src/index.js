@@ -3,7 +3,7 @@ import GraphDisplay from "./scripts/graph_display";
 import bubbleSort from "./scripts/sorting_algorithms/bubble_sort";
 
 window.addEventListener("DOMContentLoaded", () => {
-  const data = new GraphData(10);
+  const data = new GraphData(15);
   const graphDisplay = new GraphDisplay(data.data);
   graphDisplay.createChart();
 

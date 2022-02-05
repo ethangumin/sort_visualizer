@@ -5,32 +5,39 @@ class GraphDisplay {
 
   createChart() {
     const chartHeight = 600;
-    const barWidth = Math.floor(750 / this.data.length);
-    const barOffset = 3.5;
+    const width = 800;
+    const yScale = d3.scaleLinear().domain([0, 100]).range([0, chartHeight]);
+    // console.log(yScale(50));
+
+    const xScale = d3
+      .scaleBand()
+      .domain(d3.range(this.data.length))
+      .range([0, width])
+      .padding(0.5);
 
     const chart = d3
       .select(".chart")
       .append("svg")
       .attr("height", chartHeight)
-      .attr("width", "100%")
+      .attr("width", width)
       .style("background", "rgb(245,245,245)")
       .selectAll("rect")
       .data(this.data)
       .enter()
       .append("rect")
-      .attr("data_id", function(d){
-          return d.data_id;
+      .attr("data_id", function (d) {
+        return d.data_id;
       })
       .attr("class", "unsorted")
+      .attr("width", xScale.bandwidth())
       .attr("height", function (d) {
-        return d.size * 6;
+        return yScale(d.size);
       })
-      .attr("width", barWidth)
       .attr("x", function (d, i) {
-        return i * (barWidth + barOffset);
+        return xScale(i);
       })
       .attr("y", function (d) {
-        return chartHeight - d.size * 6;
+        return chartHeight - yScale(d.size);
       });
   }
 }
