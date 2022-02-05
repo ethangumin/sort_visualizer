@@ -7,13 +7,11 @@ class GraphDisplay {
     const chartHeight = 600;
     const width = 800;
     const yScale = d3.scaleLinear().domain([0, 100]).range([0, chartHeight]);
-    // console.log(yScale(50));
-
     const xScale = d3
       .scaleBand()
       .domain(d3.range(this.data.length))
       .range([0, width])
-      .padding(0.5);
+      .padding(0.25);
 
     const chart = d3
       .select(".chart")
