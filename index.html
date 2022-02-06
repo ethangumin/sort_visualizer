@@ -17,7 +17,22 @@
   </head>
   <body>
     <div class="container">
-      <h1 class="main-header">Sort Visualizer</h1>
+      <div class="header">
+        <h1 class="header__title">Sort Visualizer</h1>
+        <div class="header__buttons">
+          <select name="Input Size" class="header__input-size">
+              <option value="3">3</option>
+              <option value="5">5</option>
+              <option value="10">10</option>
+              <option value="50">50</option>
+              <option value="100" selected>100</option>
+              <option value="150">150</option>
+              <option value="500">500</option>
+          </select>
+          <input type="button" value="Play" class="header__start" />
+          <input type="button" value="Reset" class="header__reset" />
+        </div>
+      </div>
       <div class="chart"></div>
     </div>
   </body>

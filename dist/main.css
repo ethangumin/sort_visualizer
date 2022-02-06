@@ -15,36 +15,68 @@ ul {
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/styles.css ***!
   \*****************************************************************************************************/
 .container {
-    max-width: 800px;
-    width: 70%;
-    margin: 0 auto;
+  max-width: 800px;
+  width: 80%;
+  margin: 0 auto;
 }
 
-.main-header {
-    margin-top: 1.5em;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
-    letter-spacing: .2rem;
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.header__title {
+  margin-top: 0.75em;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 2.2em;
+  letter-spacing: 0.2rem;
 }
 
 .chart {
-    margin-top: 2em;
+  margin-top: 2em;
 }
 
 .sorted {
-    fill: rgba(0, 137, 216, 0.89);
-    transition: 0.3s;
+  fill: rgba(0, 137, 216, 0.89);
+  transition: 0.3s;
 }
 
 .unsorted {
-    fill: rgb(95, 95, 95);
+  fill: rgb(95, 95, 95);
 }
 
 .sorting {
-    fill: rgb(233, 229, 33);
-    transition: 0.3s;
+  fill: rgb(233, 229, 33);
+  transition: 0.3s;
 }
 
+.header__start,
+.header__reset,
+.header__input-size {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.1em;
+  padding: 0.25em 0.65em;
+  border: 1px solid #e1e1e1;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: whitesmoke;
+  color: #464646;
+}
+
+.header__input-size {
+  width: 4.5em;
+  text-align: center;
+  padding: 3.5px;
+}
+
+.disabled {
+  background-color: #464646;
+  color: whitesmoke;
+  cursor: not-allowed;
+  transition: 0.2s;
+}
 
 /*!*************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
