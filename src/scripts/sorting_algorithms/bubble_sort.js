@@ -1,65 +1,38 @@
 function bubbleSort(data) {
   console.log("bubble sort");
-  // d3.select("[data_id='0']").classed("sorting", true);
-  // d3.select("[data_id='1']").classed("sorting", true);
 
-  // for(let i = 0; i < data.length; i++){
-  //     console.log(d3.select("[data_id='"+i+"']"));
-  // }
+  let sorted = false;
+  while (!sorted) {
+    sorted = true;
 
-  // let sorted = false;
-  // while (!sorted) {
-  //   sorted = true;
-  //   let i = 0;
-  //   let p1 = 0;
-  //   let p2 = 1;
+    for (let i = 0; i < data.length - 1; i++) {
+      let bar1 = d3.select("[data_id='" + i + "']");
+      let bar2 = d3.select("[data_id='" + (i + 1) + "']");
+      let height1 = bar1.attr("height");
+      let height2 = bar2.attr("height");
 
-  //   while (i < data.length - 1) {
-  //     let first = document.querySelector(`[data_id='${p1}'`);
-  //     let second = document.querySelector(`[data_id='${p2}'`);
-  //     debugger;
-      
-  //     if()
-      
-  //   }
-  // }
+      bar1.classed("unsorted", false).classed("sorting", true);
+      bar2.classed("unsorted", false).classed("sorting", true);
 
-  // const second = document.querySelector("[data_id='1'");
-  // console.log(first);
-  // console.log(second);
+      // debugger;
 
-  // let sorted = false;
-  // while (!sorted) {
-  //   sorted = true;
-  //   let pointer1 = 0;
-  //   let pointer2 = 1;
-  //   for (let i = 0; i < data.length - 1; i++) {
-  //     let first = document.querySelector(`[data_id='${pointer1}'`);
-  //     let second = document.querySelector(`[data_id='${pointer2}'`);
+      if (parseInt(height1) > parseInt(height2)) {
+        let tempHeight = height1;
+        let tempY = bar1.attr("y");
+        bar1.attr("height", height2);
+        bar2.attr("height", tempHeight);
+        bar1.attr("y", bar2.attr("y"));
+        bar2.attr("y", tempY);
+        sorted = false;
+      } else if (bar2.classed("sorted", true)) {
+        bar1.classed("sorted", true).classed("sorting", false);
+      } else if (i + 1 === data.length - 1) {
+        bar2.classed("sorted", true).classed("sorting", false);
+      }
 
-  //     // debugger
-  //     first.classList.remove("unsorted");
-  //     second.classList.remove("unsorted");
-  //     first.classList.add("sorting");
-  //     second.classList.add("sorting");
-
-  //     if (second.classList.contains("sorted")) {
-  //       first.classList.remove("sorting");
-  //       first.classList.add("sorted");
-  //     } else if (
-  //       parseInt(first.getAttribute("height")) >
-  //       parseInt(second.getAttribute("height"))
-  //     ) {
-  //       first.style.transform = "translateX(78.5px)";
-  //       second.style.transform = "translateX(-78.5px)";
-  //       pointer2++;
-  //       sorted = false;
-  //     } else {
-  //         pointer1 = pointer2;
-  //         pointer2++;
-  //     }
-  //   }
-  // }
+      // debugger;
+    }
+  }
 }
 
 export { bubbleSort as default };
