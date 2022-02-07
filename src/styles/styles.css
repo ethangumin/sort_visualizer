@@ -18,6 +18,17 @@
   letter-spacing: 0.2rem;
 }
 
+.header__icons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header__icons * {
+  width: 30px;
+  padding-left: .5em;
+  cursor: pointer; 
+}
+
 .chart {
   margin-top: 2em;
 }
@@ -69,3 +80,5 @@
   cursor: not-allowed;
   transition: 0.2s;
 }
+
+

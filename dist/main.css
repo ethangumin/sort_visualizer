@@ -34,6 +34,17 @@ ul {
   letter-spacing: 0.2rem;
 }
 
+.header__icons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header__icons * {
+  width: 30px;
+  padding-left: .5em;
+  cursor: pointer; 
+}
+
 .chart {
   margin-top: 2em;
 }
@@ -85,6 +96,8 @@ ul {
   cursor: not-allowed;
   transition: 0.2s;
 }
+
+
 
 /*!*************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
