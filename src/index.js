@@ -38,10 +38,10 @@ window.addEventListener("DOMContentLoaded", () => {
     graphDisplay.createChart();
   });
 
-  const header = document.getElementsByClassName("header__title")[0];
-  header.addEventListener("click", function(){
-    // debugger
-    graphDisplay.bubbleSort2();
-    // graphDisplay.quickSort();
-  })
+  // const header = document.getElementsByClassName("header__title")[0];
+  // header.addEventListener("click", function(){
+  //   // debugger
+  //   graphDisplay.bubbleSort2();
+  //   // graphDisplay.quickSort();
+  // })
 });

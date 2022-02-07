@@ -39,29 +39,29 @@ class GraphDisplay {
       });
   }
 
-  async bubbleSort2() {
-    let sorted = false;
-    while (!sorted) {
-      sorted = true;
-      // debugger;
-      for (let i = 0; i < this.data.length - 1; i++) {
-        await new Promise((resolve) => {
-          setTimeout(() => {
-            resolve();
-          }, 10);
-        });
-        d3.select("svg").remove();
-        this.createChart();
-        // debugger;
-        if (this.data[i].size > this.data[i + 1].size) {
-          [this.data[i], this.data[i + 1]] = [this.data[i + 1], this.data[i]];
-          // debugger;
-          sorted = false;
-        }
-        // debugger;
-      }
-    }
-  }
+  // async bubbleSort2() {
+  //   let sorted = false;
+  //   while (!sorted) {
+  //     sorted = true;
+  //     // debugger;
+  //     for (let i = 0; i < this.data.length - 1; i++) {
+  //       await new Promise((resolve) => {
+  //         setTimeout(() => {
+  //           resolve();
+  //         }, 10);
+  //       });
+  //       d3.select("svg").remove();
+  //       this.createChart();
+  //       // debugger;
+  //       if (this.data[i].size > this.data[i + 1].size) {
+  //         [this.data[i], this.data[i + 1]] = [this.data[i + 1], this.data[i]];
+  //         // debugger;
+  //         sorted = false;
+  //       }
+  //       // debugger;
+  //     }
+  //   }
+  // }
 
   // quickSort() {
   //   function compare(a, b) {

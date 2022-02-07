@@ -1,5 +1,4 @@
-function bubbleSort(data) {
-
+async function bubbleSort(data) {
   let sorted = false;
   debugger;
   while (!sorted) {
@@ -12,10 +11,22 @@ function bubbleSort(data) {
       let height1 = bar1.attr("height");
       let height2 = bar2.attr("height");
 
+      // await new Promise((resolve) => {
+      //   setTimeout(() => {
+      //     resolve();
+      //   }, 500);
+      // });
+
       debugger;
       if (parseInt(height1) > parseInt(height2)) {
         bar1.classed("unsorted", false).classed("sorting", true);
         bar2.classed("unsorted", false).classed("sorting", true);
+
+        await new Promise((resolve) => {
+          setTimeout(() => {
+            resolve();
+          }, 500);
+        });
 
         debugger;
 
@@ -28,30 +39,71 @@ function bubbleSort(data) {
 
         bar1.classed("unsorted", true).classed("sorting", false);
 
+        // await new Promise((resolve) => {
+        //   setTimeout(() => {
+        //     resolve();
+        //   }, 500);
+        // });
+
         if (i + 1 === data.length - 1) {
           bar2.classed("sorting", false).classed("sorted", true);
           debugger;
+
+          // await new Promise((resolve) => {
+          //   setTimeout(() => {
+          //     resolve();
+          //   }, 500);
+          // });
         }
 
         sorted = false;
       } else {
-        if (bar2.classed("sorted")) {
+        if (bar1.classed("sorted") && bar2.classed("sorted")) {
+          break;
+        } else if (bar2.classed("sorted")) {
           bar1
             .classed("sorted", true)
             .classed("sorting", false)
             .classed("unsorted", false);
           debugger;
+
+          await new Promise((resolve) => {
+            setTimeout(() => {
+              resolve();
+            }, 500);
+          });
         } else if (i + 1 === data.length - 1) {
           bar2
             .classed("sorted", true)
             .classed("sorting", false)
             .classed("unsorted", false);
+
+          bar1.classed("sorting", false).classed("unsorted", true);
           debugger;
+
+          await new Promise((resolve) => {
+            setTimeout(() => {
+              resolve();
+            }, 500);
+          });
         } else {
           bar1.classed("unsorted", false).classed("sorting", true);
           bar2.classed("unsorted", false).classed("sorting", true);
           debugger;
+
+          await new Promise((resolve) => {
+            setTimeout(() => {
+              resolve();
+            }, 500);
+          });
+
           bar1.classed("unsorted", true).classed("sorting", false);
+
+          // await new Promise((resolve) => {
+          //   setTimeout(() => {
+          //     resolve();
+          //   }, 500);
+          // });
         }
       }
     }
