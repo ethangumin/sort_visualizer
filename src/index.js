@@ -1,8 +1,10 @@
 import GraphData from "./scripts/graph_data";
 import GraphDisplay from "./scripts/graph_display";
 import bubbleSort from "./scripts/sorting_algorithms/bubble_sort";
+import delay from "./scripts/delay_map";
 
 window.addEventListener("DOMContentLoaded", () => {
+  console.log(delay);
   const activateBubbleSort = document.getElementsByClassName("algos__bubble_sort")[0];
   const resetBtn = document.getElementsByClassName("footer__reset")[0];
   let inputSize =
@@ -22,9 +24,9 @@ window.addEventListener("DOMContentLoaded", () => {
       data = new GraphData(parseInt(currInputSize));
       graphDisplay = new GraphDisplay(data.data);
       graphDisplay.createChart();
-      bubbleSort(data.data);
+      bubbleSort(data.data, delay[String(currInputSize)]);
     } else {
-      bubbleSort(data.data);
+      bubbleSort(data.data, delay[String(currInputSize)]);
     }
   });
 
@@ -37,11 +39,4 @@ window.addEventListener("DOMContentLoaded", () => {
     graphDisplay = new GraphDisplay(data.data);
     graphDisplay.createChart();
   });
-
-  // const header = document.getElementsByClassName("header__title")[0];
-  // header.addEventListener("click", function(){
-  //   // debugger
-  //   graphDisplay.bubbleSort2();
-  //   // graphDisplay.quickSort();
-  // })
 });

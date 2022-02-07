@@ -29,10 +29,12 @@
 
 .unsorted {
   fill: rgb(95, 95, 95);
+  transition: 0.3s;
 }
 
 .sorting {
-  fill: rgb(233, 229, 33);
+  /* fill: rgb(233, 229, 33); */
+  fill: red;
   transition: 0.3s;
 }
 

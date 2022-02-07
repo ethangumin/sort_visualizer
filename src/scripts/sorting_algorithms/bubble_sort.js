@@ -1,23 +1,17 @@
-async function bubbleSort(data) {
+async function bubbleSort(data, delay) {
   let sorted = false;
-  debugger;
+  // debugger;
   while (!sorted) {
     sorted = true;
 
-    debugger;
+    // debugger;
     for (let i = 0; i < data.length - 1; i++) {
       const bar1 = d3.select("[data_id='" + i + "']");
       const bar2 = d3.select("[data_id='" + (i + 1) + "']");
       let height1 = bar1.attr("height");
       let height2 = bar2.attr("height");
 
-      // await new Promise((resolve) => {
-      //   setTimeout(() => {
-      //     resolve();
-      //   }, 500);
-      // });
-
-      debugger;
+      // debugger;
       if (parseInt(height1) > parseInt(height2)) {
         bar1.classed("unsorted", false).classed("sorting", true);
         bar2.classed("unsorted", false).classed("sorting", true);
@@ -25,10 +19,10 @@ async function bubbleSort(data) {
         await new Promise((resolve) => {
           setTimeout(() => {
             resolve();
-          }, 500);
+          }, delay);
         });
 
-        debugger;
+        // debugger;
 
         let tempHeight = height1;
         let tempY = bar1.attr("y");
@@ -39,21 +33,9 @@ async function bubbleSort(data) {
 
         bar1.classed("unsorted", true).classed("sorting", false);
 
-        // await new Promise((resolve) => {
-        //   setTimeout(() => {
-        //     resolve();
-        //   }, 500);
-        // });
-
         if (i + 1 === data.length - 1) {
           bar2.classed("sorting", false).classed("sorted", true);
-          debugger;
-
-          // await new Promise((resolve) => {
-          //   setTimeout(() => {
-          //     resolve();
-          //   }, 500);
-          // });
+          // debugger;
         }
 
         sorted = false;
@@ -65,12 +47,12 @@ async function bubbleSort(data) {
             .classed("sorted", true)
             .classed("sorting", false)
             .classed("unsorted", false);
-          debugger;
+          // debugger;
 
           await new Promise((resolve) => {
             setTimeout(() => {
               resolve();
-            }, 500);
+            }, delay);
           });
         } else if (i + 1 === data.length - 1) {
           bar2
@@ -79,31 +61,25 @@ async function bubbleSort(data) {
             .classed("unsorted", false);
 
           bar1.classed("sorting", false).classed("unsorted", true);
-          debugger;
+          // debugger;
 
           await new Promise((resolve) => {
             setTimeout(() => {
               resolve();
-            }, 500);
+            }, delay);
           });
         } else {
           bar1.classed("unsorted", false).classed("sorting", true);
           bar2.classed("unsorted", false).classed("sorting", true);
-          debugger;
+          // debugger;
 
           await new Promise((resolve) => {
             setTimeout(() => {
               resolve();
-            }, 500);
+            }, delay);
           });
 
           bar1.classed("unsorted", true).classed("sorting", false);
-
-          // await new Promise((resolve) => {
-          //   setTimeout(() => {
-          //     resolve();
-          //   }, 500);
-          // });
         }
       }
     }
