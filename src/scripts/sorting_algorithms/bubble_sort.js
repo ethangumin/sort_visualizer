@@ -89,6 +89,10 @@ async function bubbleSort(data, delay) {
     .classed("sorted", true)
     .classed("unsorted", false)
     .classed("sorting", false);
+
+  const resetBtn = document.getElementsByClassName("footer__reset")[0];
+  resetBtn.disabled = false;
+  resetBtn.classList.remove("disabled");
 }
 
 export { bubbleSort as default };

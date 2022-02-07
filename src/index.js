@@ -4,11 +4,11 @@ import bubbleSort from "./scripts/sorting_algorithms/bubble_sort";
 import delay from "./scripts/delay_map";
 
 window.addEventListener("DOMContentLoaded", () => {
-  console.log(delay);
   const activateBubbleSort = document.getElementsByClassName("algos__bubble_sort")[0];
   const resetBtn = document.getElementsByClassName("footer__reset")[0];
+  let inputSelector = document.getElementsByClassName("footer__input-size")[0];
   let inputSize =
-    document.getElementsByClassName("footer__input-size")[0].value;
+    inputSelector.value;
   let data = new GraphData(parseInt(inputSize));
   let graphDisplay = new GraphDisplay(data.data);
 
@@ -16,7 +16,11 @@ window.addEventListener("DOMContentLoaded", () => {
   
   activateBubbleSort.addEventListener("click", function () {
     activateBubbleSort.classList.add("disabled");
+    resetBtn.classList.add("disabled");
+    inputSelector.classList.add("disabled");
     activateBubbleSort.disabled = true;
+    resetBtn.disabled = true;
+    inputSelector.disabled = true;
     const currInputSize =
       document.getElementsByClassName("footer__input-size")[0].value;
     if (currInputSize !== inputSize) {
@@ -33,6 +37,8 @@ window.addEventListener("DOMContentLoaded", () => {
   resetBtn.addEventListener("click", function () {
     activateBubbleSort.classList.remove("disabled");
     activateBubbleSort.disabled = false;
+    inputSelector.classList.remove("disabled");
+    inputSelector.disabled = false;
     document.getElementsByTagName("svg")[0].remove();
     inputSize = document.getElementsByClassName("footer__input-size")[0].value;
     data = new GraphData(parseInt(inputSize));
