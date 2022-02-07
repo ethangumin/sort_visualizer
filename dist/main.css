@@ -52,9 +52,15 @@ ul {
   transition: 0.3s;
 }
 
-.header__start,
-.header__reset,
-.header__input-size {
+.footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.75em;
+}
+
+.footer__reset,
+.footer__input-size,
+.algos__bubble_sort {
   font-family: "Roboto", sans-serif;
   font-size: 1.1em;
   padding: 0.25em 0.65em;
@@ -65,7 +71,7 @@ ul {
   color: #464646;
 }
 
-.header__input-size {
+.footer__input-size {
   width: 4.5em;
   text-align: center;
   padding: 3.5px;

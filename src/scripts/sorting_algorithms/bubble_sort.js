@@ -1,5 +1,4 @@
 function bubbleSort(data) {
-  console.log("sorting");
 
   let sorted = false;
   debugger;

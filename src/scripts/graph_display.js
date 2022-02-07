@@ -38,6 +38,50 @@ class GraphDisplay {
         return chartHeight - yScale(d.size);
       });
   }
+
+  async bubbleSort2() {
+    let sorted = false;
+    while (!sorted) {
+      sorted = true;
+      // debugger;
+      for (let i = 0; i < this.data.length - 1; i++) {
+        await new Promise((resolve) => {
+          setTimeout(() => {
+            resolve();
+          }, 10);
+        });
+        d3.select("svg").remove();
+        this.createChart();
+        // debugger;
+        if (this.data[i].size > this.data[i + 1].size) {
+          [this.data[i], this.data[i + 1]] = [this.data[i + 1], this.data[i]];
+          // debugger;
+          sorted = false;
+        }
+        // debugger;
+      }
+    }
+  }
+
+  // quickSort() {
+  //   function compare(a, b) {
+  //     return a < b ? -1 : 1;
+  //   }
+
+  //   debugger;
+  //   if (this.data.length <= 1) return this.data;
+
+  //   const pivot = this.data[0];
+  //   const left = this.data
+  //     .slice(1)
+  //     .filter((el) => compare(el.size, pivot.size) === -1);
+  //   const right = this.data
+  //     .slice(1)
+  //     .filter((el) => compare(el.size, pivot.size) !== -1);
+
+  //   debugger;
+  //   return [...left.quickSort(), pivot, ...right.quickSort()];
+  // }
 }
 
 export default GraphDisplay;

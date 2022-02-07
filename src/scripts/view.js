@@ -1,3 +1,6 @@
+import GraphData from "./graph_data";
+import GraphDisplay from "./graph_display";
+
 class View {
     constructor(chart, numInput, startBtn, resetBtn){
         this.chart = chart;
