@@ -2,6 +2,7 @@ import GraphData from "./scripts/graph_data";
 import GraphDisplay from "./scripts/graph_display";
 import bubbleSort from "./scripts/sorting_algorithms/bubble_sort";
 import delay from "./scripts/delay_map";
+// import mergeSort from "./scripts/sorting_algorithms/merge_sort"
 import {disableButton, removeDisableButton} from "./scripts/utility_functions";
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -63,4 +64,13 @@ window.addEventListener("DOMContentLoaded", () => {
   modal.addEventListener("click", () => {
     modal.classList.remove("modal__bg-active");
   });
+
+  // toggle mergeSort
+  document.getElementsByClassName("header__title")[0].addEventListener("click", () => {
+    const newData = graphDisplay.mergeSort(data.data);
+    console.log(newData);
+    // d3.select("svg").remove();
+    // graphDisplay = new GraphDisplay(newData);
+    // graphDisplay.createChart();
+  })
 });
