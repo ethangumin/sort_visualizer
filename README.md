@@ -2,7 +2,7 @@
 
 "Sort Visualizer" is an inuitive learning tool designed to help users better understand how different sorting algorithms work.
 
-The data is displayed as a bar chart that, when activated, will shift its bars in the pattern of the chosen algorithm. Throughout this process, the color of each bar will change depending its status (sorted, unsorted, currently being sorted).
+The data is displayed as a bar chart that, when activated, will shift its bars in the pattern of the chosen algorithm. Throughout this process, the color of each bar will change depending its sorted status.
 
 "Sort Visualizer" also contains a modal with details about the currently selected algorithm, showing information about how the algorithm sorts data, as well as its advantages/disadvantages and its time/space complexity.
 
@@ -26,7 +26,7 @@ In addition, this project will include:
 <br>
 
 <h1>Wireframes</h1>
-<img src="./images/wireframe.png" alt="wireframe" />
+<img src="./images/wireframe2.png" alt="wireframe" />
 <br>
 <ul>
     <li>
@@ -37,9 +37,8 @@ In addition, this project will include:
             <li>Application Description/Instructions Modal</li>
         </ul>
     </li>
-    <li>Controls will include start and stop buttons</li>
+    <li>Controls will include start and reset buttons</li>
     <li>The Algorithm Description Modal Button will display information about the current sorting algorithm</li>
-    <li>Color scheme buttons toggle light/dark mode</li>
 </ul>
 
 <br>
@@ -78,6 +77,7 @@ In addition, this project will include:
 <h1>Bonus Features</h1>
 <ul>
     <li>Create visualizations for additional sorting algorithms (ex. merge sort, quick sort, insertion sort, selection sort)</li>
+    <li>Scale to select speed</li>
     <li>Mobile responsive</li>
 </ul>
 

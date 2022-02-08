@@ -4,16 +4,18 @@ import bubbleSort from "./scripts/sorting_algorithms/bubble_sort";
 import delay from "./scripts/delay_map";
 
 window.addEventListener("DOMContentLoaded", () => {
-  const activateBubbleSort = document.getElementsByClassName("algos__bubble_sort")[0];
+  const helpBtn = document.getElementById("help-btn");
+  const modal = document.getElementsByClassName("modal__bg")[0];
+  const activateBubbleSort =
+    document.getElementsByClassName("algos__bubble_sort")[0];
   const resetBtn = document.getElementsByClassName("footer__reset")[0];
   let inputSelector = document.getElementsByClassName("footer__input-size")[0];
-  let inputSize =
-    inputSelector.value;
+  let inputSize = inputSelector.value;
   let data = new GraphData(parseInt(inputSize));
   let graphDisplay = new GraphDisplay(data.data);
 
   graphDisplay.createChart();
-  
+
   activateBubbleSort.addEventListener("click", function () {
     activateBubbleSort.classList.add("disabled");
     resetBtn.classList.add("disabled");
@@ -45,4 +47,13 @@ window.addEventListener("DOMContentLoaded", () => {
     graphDisplay = new GraphDisplay(data.data);
     graphDisplay.createChart();
   });
+
+  helpBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    modal.classList.add("modal__bg-active");
+  });
+
+  modal.addEventListener("click", () => {
+    modal.classList.remove("modal__bg-active");
+  })
 });
