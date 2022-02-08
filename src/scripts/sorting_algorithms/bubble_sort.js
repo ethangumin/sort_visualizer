@@ -1,17 +1,16 @@
+import { removeDisableButton } from "../utility_functions";
+
 async function bubbleSort(data, delay) {
   let sorted = false;
-  // debugger;
   while (!sorted) {
     sorted = true;
 
-    // debugger;
     for (let i = 0; i < data.length - 1; i++) {
       const bar1 = d3.select("[data_id='" + i + "']");
       const bar2 = d3.select("[data_id='" + (i + 1) + "']");
       let height1 = bar1.attr("height");
       let height2 = bar2.attr("height");
 
-      // debugger;
       if (parseInt(height1) > parseInt(height2)) {
         bar1.classed("unsorted", false).classed("sorting", true);
         bar2.classed("unsorted", false).classed("sorting", true);
@@ -21,8 +20,6 @@ async function bubbleSort(data, delay) {
             resolve();
           }, delay);
         });
-
-        // debugger;
 
         let tempHeight = height1;
         let tempY = bar1.attr("y");
@@ -35,7 +32,6 @@ async function bubbleSort(data, delay) {
 
         if (i + 1 === data.length - 1) {
           bar2.classed("sorting", false).classed("sorted", true);
-          // debugger;
         }
 
         sorted = false;
@@ -47,7 +43,6 @@ async function bubbleSort(data, delay) {
             .classed("sorted", true)
             .classed("sorting", false)
             .classed("unsorted", false);
-          // debugger;
 
           await new Promise((resolve) => {
             setTimeout(() => {
@@ -61,7 +56,6 @@ async function bubbleSort(data, delay) {
             .classed("unsorted", false);
 
           bar1.classed("sorting", false).classed("unsorted", true);
-          // debugger;
 
           await new Promise((resolve) => {
             setTimeout(() => {
@@ -71,7 +65,6 @@ async function bubbleSort(data, delay) {
         } else {
           bar1.classed("unsorted", false).classed("sorting", true);
           bar2.classed("unsorted", false).classed("sorting", true);
-          // debugger;
 
           await new Promise((resolve) => {
             setTimeout(() => {
@@ -90,9 +83,7 @@ async function bubbleSort(data, delay) {
     .classed("unsorted", false)
     .classed("sorting", false);
 
-  const resetBtn = document.getElementsByClassName("footer__reset")[0];
-  resetBtn.disabled = false;
-  resetBtn.classList.remove("disabled");
+  removeDisableButton(document.getElementsByClassName("footer__reset")[0]);
 }
 
 export { bubbleSort as default };

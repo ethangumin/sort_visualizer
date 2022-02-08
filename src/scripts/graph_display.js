@@ -4,6 +4,7 @@ class GraphDisplay {
   }
 
   createChart() {
+    debugger;
     const chartHeight = 600;
     const width = 800;
     const yScale = d3.scaleLinear().domain([0, 100]).range([0, chartHeight]);
