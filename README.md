@@ -38,9 +38,8 @@ In addition, this project includes:
             <li>Application Description/Instructions Modal</li>
         </ul>
     </li>
-    <li>
+    <li>Controls will include:
         <ul>
-            Controls will include:
             <li>Sort Selector</li>
             <li>Speed Selector</li>
             <li>Input Size Selector</li>
