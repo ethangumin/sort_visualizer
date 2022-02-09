@@ -1,22 +1,17 @@
 import { removeDisableButton } from "../utility_functions";
 
 async function insertionSort(data, delay) {
-  debugger;
-
   for (let i = 1; i < data.length; i++) {
-
     const curr = d3.select("[data_id='" + i + "']");
     const currHeight = curr.attr("height");
     const currY = curr.attr("y");
 
     await sortDelay(delay);
 
-    debugger;
     curr
       .classed("unsorted", false)
       .classed("sorted", true)
       .classed("sorting", false);
-    debugger;
 
     await sortDelay(delay);
 
@@ -28,8 +23,6 @@ async function insertionSort(data, delay) {
         parseInt(d3.select("[data_id='" + j + "']").attr("height"))
     ) {
       await sortDelay(delay);
-
-      debugger;
 
       d3.select("[data_id='" + (j + 1) + "']")
         .attr("height", d3.select("[data_id='" + j + "']").attr("height"))
@@ -43,8 +36,6 @@ async function insertionSort(data, delay) {
 
     await sortDelay(delay);
 
-    debugger;
-
     d3.select("[data_id='" + (j + 1) + "']")
       .attr("height", currHeight)
       .attr("y", currY)
@@ -53,7 +44,6 @@ async function insertionSort(data, delay) {
       .classed("unsorted", false);
   }
 
-  debugger;
   d3.selectAll("rect")
     .classed("sorted", true)
     .classed("unsorted", false)
