@@ -4,6 +4,7 @@ async function insertionSort(data, delay) {
   debugger;
 
   for (let i = 1; i < data.length; i++) {
+
     const curr = d3.select("[data_id='" + i + "']");
     const currHeight = curr.attr("height");
     const currY = curr.attr("y");
@@ -11,12 +12,13 @@ async function insertionSort(data, delay) {
     await sortDelay(delay);
 
     debugger;
-    // curr.classed("unsorted", false).classed("sorting", true);
     curr
       .classed("unsorted", false)
       .classed("sorted", true)
       .classed("sorting", false);
     debugger;
+
+    await sortDelay(delay);
 
     let j = i - 1;
 
@@ -27,16 +29,11 @@ async function insertionSort(data, delay) {
     ) {
       await sortDelay(delay);
 
-      let jBar = d3.select("[data_id='" + j + "']");
-
       debugger;
-    //   d3.select("[data_id='" + (j + 1) + "']")
-    //     .attr("height", jBar.attr("height"))
-    //     .attr("y", jBar.attr("y"));
 
       d3.select("[data_id='" + (j + 1) + "']")
-        .attr("height", jBar.attr("height"))
-        .attr("y", jBar.attr("y"))
+        .attr("height", d3.select("[data_id='" + j + "']").attr("height"))
+        .attr("y", d3.select("[data_id='" + j + "']").attr("y"))
         .classed("sorted", false)
         .classed("sorting", true)
         .classed("unsorted", false);

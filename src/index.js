@@ -2,6 +2,7 @@ import GraphData from "./scripts/graph_data";
 import GraphDisplay from "./scripts/graph_display";
 import bubbleSort from "./scripts/sorting_algorithms/bubble_sort";
 import insertionSort from "./scripts/sorting_algorithms/insertion_sort";
+import modalContent from "./scripts/modal_content";
 import {
   disableButton,
   removeDisableButton,
@@ -12,6 +13,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const startBtn = document.getElementsByClassName("footer__start")[0];
   const helpBtn = document.getElementById("help-btn");
   const resetBtn = document.getElementsByClassName("footer__reset")[0];
+  const algoDetailsBtn = document.getElementsByClassName("algo_details")[0];
 
   // selectors
   let algoSelector = document.getElementsByClassName("algo_select")[0];
@@ -20,6 +22,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   // modal
   const modal = document.getElementsByClassName("modal__bg")[0];
+  const modalContentDiv = document.getElementsByClassName("modal__content")[0];
 
   // input size
   let inputSize = inputSelector.value;
@@ -63,6 +66,7 @@ window.addEventListener("DOMContentLoaded", () => {
   // toggle modal on
   helpBtn.addEventListener("click", (e) => {
     e.preventDefault();
+    modalContentDiv.innerHTML = modalContent.appInformation;
     modal.classList.add("modal__bg-active");
   });
 
@@ -70,6 +74,21 @@ window.addEventListener("DOMContentLoaded", () => {
   modal.addEventListener("click", () => {
     modal.classList.remove("modal__bg-active");
   });
+
+  // toggle sort info
+  algoDetailsBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    switch(algoSelector.value){
+      case "bubble sort":
+        modalContentDiv.innerHTML = modalContent.bubbleSort;
+        break;
+      case "insertion sort":
+        modalContentDiv.innerHTML = modalContent.insertionSort;
+    }
+
+    modal.classList.add("modal__bg-active");
+  })
 
   // reset canvas
   function resetChart() {

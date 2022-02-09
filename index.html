@@ -18,23 +18,7 @@
   <body>
     <div class="modal__bg">
       <div class="modal">
-        <div class="modal__content">
-          <p>
-            <b>Sort Visualizer</b> is a tool created to help people better
-            understand sorting algorithms.
-          </p>
-          <br />
-          <p>
-            This application is straight-forward and intuitive. Below the graph,
-            select an input size and click on an algorithm (ex. Bubble Sort) to
-            begin sorting!
-          </p>
-          <br />
-          <p>
-            Once the sort is complete, click the "Reset" button to generate a
-            new, unsorted, graph.
-          </p>
-        </div>
+        <div class="modal__content"></div>
       </div>
     </div>
     <div class="container">
@@ -71,9 +55,10 @@
       <div class="footer">
         <div class="algos">
           <select name="Algorithm Select" class="algo_select">
-            <option value="bubble sort">Bubble Sort</option>
+            <option value="bubble sort" selected>Bubble Sort</option>
             <option value="insertion sort">Insertion Sort</option>
           </select>
+          <input type="button" value="Sort Details" class="algo_details" />
         </div>
         <div class="footer_buttons">
           <select name="Speed" class="footer__speed">
@@ -84,8 +69,8 @@
           </select>
           <select name="Input Size" class="footer__input-size">
             <option value="10">10</option>
-            <option value="50">50</option>
-            <option value="100" selected>100</option>
+            <option value="50" selected>50</option>
+            <option value="100">100</option>
             <option value="250">250</option>
             <option value="500">500</option>
           </select>
