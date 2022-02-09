@@ -1,9 +1,13 @@
 import GraphData from "./scripts/graph_data";
 import GraphDisplay from "./scripts/graph_display";
 import bubbleSort from "./scripts/sorting_algorithms/bubble_sort";
+import insertionSort from "./scripts/sorting_algorithms/insertion_sort";
 import delay from "./scripts/delay_map";
 // import mergeSort from "./scripts/sorting_algorithms/merge_sort"
-import {disableButton, removeDisableButton} from "./scripts/utility_functions";
+import {
+  disableButton,
+  removeDisableButton,
+} from "./scripts/utility_functions";
 
 window.addEventListener("DOMContentLoaded", () => {
   // buttons
@@ -66,9 +70,10 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
   // toggle quickSort
-  document.getElementsByClassName("header__title")[0].addEventListener("click", () => {
-    const sorted = graphDisplay.quickSort(data.data);
-    // const sorted = graphDisplay.mergeSort(data.data);
-    console.log(sorted);
-  })
+  document
+    .getElementsByClassName("header__title")[0]
+    .addEventListener("click", () => {
+      // const sorted = graphDisplay.quickSort(data.data);
+      insertionSort(data.data, delay[String(inputSelector.value)]);
+    });
 });

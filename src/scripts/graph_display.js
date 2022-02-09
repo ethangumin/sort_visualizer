@@ -39,46 +39,50 @@ class GraphDisplay {
       });
   }
 
-  async quickSort(arr, start = 0, end = arr.length - 1) {
-    if (start >= end) return;
+  // async quickSort(arr, start = 0, end = arr.length - 1) {
+  //   if (start >= end) return;
 
-    const idx = await this.quickSortHelperPartition(arr, start, end);
+  //   const idx = await this.quickSortHelperPartition(arr, start, end);
 
-    await Promise.all([
-      this.quickSort(arr, start, idx - 1),
-      this.quickSort(arr, idx + 1, end),
-    ]);
-  }
+  //   await Promise.all([
+  //     this.quickSort(arr, start, idx - 1),
+  //     this.quickSort(arr, idx + 1, end),
+  //   ]);
+  // }
 
-  async quickSortHelperPartition(arr, start, end) {
-    let pivotIdx = start;
-    let pivotVal = arr[end].size;
+  // async quickSortHelperPartition(arr, start, end) {
+  //   let pivotIdx = start;
+  //   let pivotVal = arr[end].size;
 
-    debugger;
+  //   debugger;
 
-    for (let i = start; i < end; i++) {
-      if (arr[i].size < pivotVal) {
-        [arr[i], arr[pivotIdx]] = [arr[pivotIdx], arr[i]];
-        pivotIdx++;
-      }
-    }
+  //   for (let i = start; i < end; i++) {
+  //     if (arr[i].size < pivotVal) {
+  //       [arr[i], arr[pivotIdx]] = [arr[pivotIdx], arr[i]];
+  //       pivotIdx++;
+  //     }
+  //   }
 
-    debugger;
+  //   debugger;
 
-    d3.select("svg").remove();
-    this.createChart();
+  //   d3.select("svg").remove();
+  //   this.createChart();
 
-    await this.sortDelay();
+  //   await this.sortDelay();
 
-    [arr[end], arr[pivotIdx]] = [arr[pivotIdx], arr[end]];
+  //   [arr[end], arr[pivotIdx]] = [arr[pivotIdx], arr[end]];
 
-    debugger;
+  //   debugger;
 
-    return pivotIdx;
-  }
+  //   return pivotIdx;
+  // }
 
   sortDelay() {
-    return new Promise((res) => setTimeout(res, 100));
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve();
+      }, 100);
+    });
   }
 }
 
