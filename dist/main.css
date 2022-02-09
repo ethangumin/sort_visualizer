@@ -81,7 +81,8 @@ ul {
 .footer__reset,
 .footer__input-size,
 .algo_select,
-.footer__start {
+.footer__start,
+.footer__speed {
   font-family: "Roboto", sans-serif;
   font-size: 1.1em;
   padding: 0.25em 0.65em;
@@ -95,7 +96,16 @@ ul {
 .footer__input-size {
   width: 4.5em;
   text-align: center;
+}
+
+.footer__input-size,
+.footer__speed,
+.algo_select {
   padding: 3.5px;
+}
+
+.footer__speed {
+  text-align: center;
 }
 
 .disabled {

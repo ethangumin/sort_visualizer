@@ -2,7 +2,6 @@ import GraphData from "./scripts/graph_data";
 import GraphDisplay from "./scripts/graph_display";
 import bubbleSort from "./scripts/sorting_algorithms/bubble_sort";
 import insertionSort from "./scripts/sorting_algorithms/insertion_sort";
-import delay from "./scripts/delay_map";
 // import mergeSort from "./scripts/sorting_algorithms/merge_sort"
 import {
   disableButton,
@@ -13,18 +12,17 @@ window.addEventListener("DOMContentLoaded", () => {
   // buttons
   const startBtn = document.getElementsByClassName("footer__start")[0];
   const helpBtn = document.getElementById("help-btn");
-  const bubbleSortBtn =
-    document.getElementsByClassName("algos__bubble_sort")[0];
   const resetBtn = document.getElementsByClassName("footer__reset")[0];
 
-  // select algorithm
+  // selectors
   let algoSelector = document.getElementsByClassName("algo_select")[0];
+  let inputSelector = document.getElementsByClassName("footer__input-size")[0];
+  let speedSelector = document.getElementsByClassName("footer__speed")[0];
 
   // modal
   const modal = document.getElementsByClassName("modal__bg")[0];
 
-  // selected input size
-  let inputSelector = document.getElementsByClassName("footer__input-size")[0];
+  // input size
   let inputSize = inputSelector.value;
 
   // create initial chart
@@ -38,6 +36,7 @@ window.addEventListener("DOMContentLoaded", () => {
     disableButton(resetBtn);
     disableButton(inputSelector);
     disableButton(algoSelector);
+    disableButton(speedSelector);
 
     if (inputSelector.value !== inputSize) {
       resetChart();
@@ -45,10 +44,10 @@ window.addEventListener("DOMContentLoaded", () => {
 
     switch (algoSelector.value) {
       case "bubble sort":
-        bubbleSort(data.data, delay[String(inputSelector.value)]);
+        bubbleSort(data.data, parseInt(speedSelector.value));
         break;
       case "insertion sort":
-        insertionSort(data.data, delay[String(inputSelector.value)]);
+        insertionSort(data.data, parseInt(speedSelector.value));
         break;
     }
   });
@@ -58,6 +57,7 @@ window.addEventListener("DOMContentLoaded", () => {
     removeDisableButton(startBtn);
     removeDisableButton(algoSelector);
     removeDisableButton(inputSelector);
+    removeDisableButton(speedSelector);
     resetChart();
   });
 
