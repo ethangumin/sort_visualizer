@@ -79,7 +79,7 @@ window.addEventListener("DOMContentLoaded", () => {
   algoDetailsBtn.addEventListener("click", (e) => {
     e.preventDefault();
 
-    switch(algoSelector.value){
+    switch (algoSelector.value) {
       case "bubble sort":
         modalContentDiv.innerHTML = modalContent.bubbleSort;
         break;
@@ -88,7 +88,7 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 
     modal.classList.add("modal__bg-active");
-  })
+  });
 
   // reset canvas
   function resetChart() {
