@@ -1,8 +1,6 @@
 class GraphDisplay {
   constructor(data) {
     this.data = data;
-    // this.mergeSort = this.mergeSort.bind(this);
-    this.quickSort = this.quickSort.bind(this);
   }
 
   createChart() {
@@ -78,45 +76,6 @@ class GraphDisplay {
 
     return pivotIdx;
   }
-
-  // async mergeSort(arr) {
-  //   if (arr.length <= 1) {
-  //     return arr;
-  //   }
-
-  //   debugger;
-
-  //   let left;
-  //   let right;
-  //   const midIdx = Math.floor(arr.length / 2);
-  //   await Promise.all([
-  //     left = this.mergeSort(arr.slice(0, midIdx)),
-  //     right = this.mergeSort(arr.slice(midIdx)),
-  //   ]);
-  //   // const left = this.mergeSort(arr.slice(0, midIdx));
-  //   // const right = this.mergeSort(arr.slice(midIdx));
-  //   const res = [];
-
-  //   while (left.length && right.length) {
-  //     if (left[0].size < right[0].size) {
-  //       res.push(left.shift());
-  //     } else {
-  //       res.push(right.shift());
-  //     }
-  //   }
-
-  //   debugger;
-
-  //   d3.select("svg").remove();
-  //   this.createChart();
-  //   await this.sortDelay();
-
-  //   debugger;
-
-  //   return res.concat(left).concat(right);
-
-  //   debugger;
-  // }
 
   sortDelay() {
     return new Promise((res) => setTimeout(res, 100));
