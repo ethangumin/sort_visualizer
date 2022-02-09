@@ -15,11 +15,7 @@ async function bubbleSort(data, delay) {
         bar1.classed("unsorted", false).classed("sorting", true);
         bar2.classed("unsorted", false).classed("sorting", true);
 
-        await new Promise((resolve) => {
-          setTimeout(() => {
-            resolve();
-          }, delay);
-        });
+        await sortDelay(delay);
 
         let tempHeight = height1;
         let tempY = bar1.attr("y");
@@ -44,11 +40,9 @@ async function bubbleSort(data, delay) {
             .classed("sorting", false)
             .classed("unsorted", false);
 
-          await new Promise((resolve) => {
-            setTimeout(() => {
-              resolve();
-            }, delay);
-          });
+          await sortDelay(delay);
+
+
         } else if (i + 1 === data.length - 1) {
           bar2
             .classed("sorted", true)
@@ -57,20 +51,13 @@ async function bubbleSort(data, delay) {
 
           bar1.classed("sorting", false).classed("unsorted", true);
 
-          await new Promise((resolve) => {
-            setTimeout(() => {
-              resolve();
-            }, delay);
-          });
+          await sortDelay(delay);
+
         } else {
           bar1.classed("unsorted", false).classed("sorting", true);
           bar2.classed("unsorted", false).classed("sorting", true);
 
-          await new Promise((resolve) => {
-            setTimeout(() => {
-              resolve();
-            }, delay);
-          });
+          await sortDelay(delay);
 
           bar1.classed("unsorted", true).classed("sorting", false);
         }
@@ -84,6 +71,14 @@ async function bubbleSort(data, delay) {
     .classed("sorting", false);
 
   removeDisableButton(document.getElementsByClassName("footer__reset")[0]);
+}
+
+function sortDelay(delay) {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve();
+      }, delay);
+    });
 }
 
 export { bubbleSort as default };

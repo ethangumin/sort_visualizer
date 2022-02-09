@@ -1,7 +1,8 @@
 class GraphDisplay {
   constructor(data) {
     this.data = data;
-    this.mergeSort = this.mergeSort.bind(this);
+    // this.mergeSort = this.mergeSort.bind(this);
+    this.quickSort = this.quickSort.bind(this);
   }
 
   createChart() {
@@ -40,37 +41,85 @@ class GraphDisplay {
       });
   }
 
-  mergeSort(arr) {
-    console.log(arr);
-    if (arr.length <= 1) return arr;
+  async quickSort(arr, start = 0, end = arr.length - 1) {
+    if (start >= end) return;
 
-    const mid = arr.length / 2;
+    const idx = await this.quickSortHelperPartition(arr, start, end);
 
-    const left = this.mergeSort(arr.slice(0, mid));
-    const right = this.mergeSort(arr.slice(mid));
-
-    return this.merge(left, right);
+    await Promise.all([
+      this.quickSort(arr, start, idx - 1),
+      this.quickSort(arr, idx + 1, end),
+    ]);
   }
 
-  merge(arr1, arr2) {
-    const res = [];
-    while (arr1.length && arr2.length) {
-      if (arr1[0].size < arr2[0].size) {
-        res.push(arr1.shift());
-      } else {
-        res.push(arr2.shift());
+  async quickSortHelperPartition(arr, start, end) {
+    let pivotIdx = start;
+    let pivotVal = arr[end].size;
+
+    debugger;
+
+    for (let i = start; i < end; i++) {
+      if (arr[i].size < pivotVal) {
+        [arr[i], arr[pivotIdx]] = [arr[pivotIdx], arr[i]];
+        pivotIdx++;
       }
     }
 
     debugger;
-    this.data = res.concat(arr1).concat(arr2);
 
-    d3.select('svg').remove();
+    d3.select("svg").remove();
     this.createChart();
+
+    await this.sortDelay();
+
+    [arr[end], arr[pivotIdx]] = [arr[pivotIdx], arr[end]];
+
     debugger;
 
-    return this.data;
+    return pivotIdx;
+  }
 
+  // async mergeSort(arr) {
+  //   if (arr.length <= 1) {
+  //     return arr;
+  //   }
+
+  //   debugger;
+
+  //   let left;
+  //   let right;
+  //   const midIdx = Math.floor(arr.length / 2);
+  //   await Promise.all([
+  //     left = this.mergeSort(arr.slice(0, midIdx)),
+  //     right = this.mergeSort(arr.slice(midIdx)),
+  //   ]);
+  //   // const left = this.mergeSort(arr.slice(0, midIdx));
+  //   // const right = this.mergeSort(arr.slice(midIdx));
+  //   const res = [];
+
+  //   while (left.length && right.length) {
+  //     if (left[0].size < right[0].size) {
+  //       res.push(left.shift());
+  //     } else {
+  //       res.push(right.shift());
+  //     }
+  //   }
+
+  //   debugger;
+
+  //   d3.select("svg").remove();
+  //   this.createChart();
+  //   await this.sortDelay();
+
+  //   debugger;
+
+  //   return res.concat(left).concat(right);
+
+  //   debugger;
+  // }
+
+  sortDelay() {
+    return new Promise((res) => setTimeout(res, 100));
   }
 }
 

@@ -65,12 +65,10 @@ window.addEventListener("DOMContentLoaded", () => {
     modal.classList.remove("modal__bg-active");
   });
 
-  // toggle mergeSort
+  // toggle quickSort
   document.getElementsByClassName("header__title")[0].addEventListener("click", () => {
-    const newData = graphDisplay.mergeSort(data.data);
-    console.log(newData);
-    // d3.select("svg").remove();
-    // graphDisplay = new GraphDisplay(newData);
-    // graphDisplay.createChart();
+    const sorted = graphDisplay.quickSort(data.data);
+    // const sorted = graphDisplay.mergeSort(data.data);
+    console.log(sorted);
   })
 });
