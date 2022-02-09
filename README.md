@@ -1,10 +1,10 @@
 <h1>Background</h1>
 
-"Sort Visualizer" is an inuitive learning tool designed to help users better understand how different sorting algorithms work.
+"Sort Visualizer" is an inuitive learning tool designed to help users gain a better understanding of how different sorting algorithms work. 
 
-The data is displayed as a bar chart that, when activated, will shift its bars in the pattern of the chosen algorithm. Throughout this process, the color of each bar will change depending its sorted status.
+The dataset of randomly sized elements is displayed as a bar chart that, when activated, will sort itself in the pattern of the chosen algorithm. Throughout this process, the color of each bar will change depending its sorted status.
 
-"Sort Visualizer" also contains a modal with details about the currently selected algorithm, showing information about how the algorithm sorts data, as well as its advantages/disadvantages and its time/space complexity.
+"Sort Visualizer" also contains a modal with details about the currently selected algorithm, showing information about how it sorts data, as well as the algorithm's common uses and its time/space complexity.
 
 <br>
 
@@ -15,11 +15,12 @@ In "Sort Visualizer," users are be able to:
     <li>Start and reset the visualization</li>
     <li>Select an algorithm</li>
     <li>Choose a number of inputs to sort</li>
+    <li>Select a sort speed</li>
     <li>Toggle a modal to learn more about each algorithm</li>
 </ul>
-In addition, this project will include:
+In addition, this project includes:
 <ul>
-    <li>A modal describing "Sort Visualizer" and instructions on how to use it</li>
+    <li>A modal describing the "Sort Visualizer" application and instructions on how to use it</li>
     <li>A production README</li>
 </ul>
 
@@ -37,7 +38,16 @@ In addition, this project will include:
             <li>Application Description/Instructions Modal</li>
         </ul>
     </li>
-    <li>Controls will include start and reset buttons</li>
+    <li>
+        <ul>
+            Controls will include:
+            <li>Sort Selector</li>
+            <li>Speed Selector</li>
+            <li>Input Size Selector</li>
+            <li>Start Button</li>
+            <li>Reset Button</li>
+        </ul>
+    </li>
     <li>The Algorithm Description Modal Button will display information about the current sorting algorithm</li>
 </ul>
 
@@ -78,6 +88,5 @@ In addition, this project will include:
 <ul>
     <li>Create visualizations for additional sorting algorithms (ex. merge sort, quick sort, insertion sort, selection sort)</li>
     <li>Scale to select speed</li>
-    <li>Mobile responsive</li>
 </ul>
 
