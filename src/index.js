@@ -2,7 +2,6 @@ import GraphData from "./scripts/graph_data";
 import GraphDisplay from "./scripts/graph_display";
 import bubbleSort from "./scripts/sorting_algorithms/bubble_sort";
 import insertionSort from "./scripts/sorting_algorithms/insertion_sort";
-// import mergeSort from "./scripts/sorting_algorithms/merge_sort"
 import {
   disableButton,
   removeDisableButton,

@@ -1,6 +1,5 @@
 class GraphData {
   constructor(num) {
-    // this.data = this.generateData.call(this, num);
     this.data = this.generateData(num);
   }
 
