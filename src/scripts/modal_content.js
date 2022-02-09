@@ -28,7 +28,7 @@ const modalContent = {
     <br/>
       <p>
         Bubble Sort is simple in nature and is primarily used to help give students 
-        an understanding of the funamentals of sorting algorithms.
+        an understanding of the fundamentals of sorting algorithms.
       </p>
     <br />
     <p><b>Time Complexity:</b> O(n^2)</p>
