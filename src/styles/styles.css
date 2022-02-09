@@ -64,7 +64,8 @@
 
 .footer__reset,
 .footer__input-size,
-.algos__bubble_sort {
+.algo_select,
+.footer__start {
   font-family: "Roboto", sans-serif;
   font-size: 1.1em;
   padding: 0.25em 0.65em;

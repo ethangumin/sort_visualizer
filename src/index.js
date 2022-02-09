@@ -11,10 +11,14 @@ import {
 
 window.addEventListener("DOMContentLoaded", () => {
   // buttons
+  const startBtn = document.getElementsByClassName("footer__start")[0];
   const helpBtn = document.getElementById("help-btn");
   const bubbleSortBtn =
     document.getElementsByClassName("algos__bubble_sort")[0];
   const resetBtn = document.getElementsByClassName("footer__reset")[0];
+
+  // select algorithm
+  let algoSelector = document.getElementsByClassName("algo_select")[0];
 
   // modal
   const modal = document.getElementsByClassName("modal__bg")[0];
@@ -28,34 +32,33 @@ window.addEventListener("DOMContentLoaded", () => {
   let graphDisplay = new GraphDisplay(data.data);
   graphDisplay.createChart();
 
-  // activate bubble sort
-  bubbleSortBtn.addEventListener("click", function () {
-    // disable buttons when sort function is running
-    disableButton(bubbleSortBtn);
+  // activate sort
+  startBtn.addEventListener("click", function () {
+    disableButton(startBtn);
     disableButton(resetBtn);
     disableButton(inputSelector);
+    disableButton(algoSelector);
 
-    // if selected input size is not the same as the previous input size
     if (inputSelector.value !== inputSize) {
-      document.getElementsByTagName("svg")[0].remove();
-      data = new GraphData(parseInt(inputSelector.value));
-      graphDisplay = new GraphDisplay(data.data);
-      graphDisplay.createChart();
-      bubbleSort(data.data, delay[String(inputSelector.value)]);
-    } else {
-      bubbleSort(data.data, delay[String(inputSelector.value)]);
+      resetChart();
+    }
+
+    switch (algoSelector.value) {
+      case "bubble sort":
+        bubbleSort(data.data, delay[String(inputSelector.value)]);
+        break;
+      case "insertion sort":
+        insertionSort(data.data, delay[String(inputSelector.value)]);
+        break;
     }
   });
 
   // reactivate buttons and reset canvas
   resetBtn.addEventListener("click", function () {
-    removeDisableButton(bubbleSortBtn);
+    removeDisableButton(startBtn);
+    removeDisableButton(algoSelector);
     removeDisableButton(inputSelector);
-    document.getElementsByTagName("svg")[0].remove();
-    inputSize = document.getElementsByClassName("footer__input-size")[0].value;
-    data = new GraphData(parseInt(inputSize));
-    graphDisplay = new GraphDisplay(data.data);
-    graphDisplay.createChart();
+    resetChart();
   });
 
   // toggle modal on
@@ -69,11 +72,11 @@ window.addEventListener("DOMContentLoaded", () => {
     modal.classList.remove("modal__bg-active");
   });
 
-  // toggle quickSort
-  document
-    .getElementsByClassName("header__title")[0]
-    .addEventListener("click", () => {
-      // const sorted = graphDisplay.quickSort(data.data);
-      insertionSort(data.data, delay[String(inputSelector.value)]);
-    });
+  // reset canvas
+  function resetChart() {
+    document.getElementsByTagName("svg")[0].remove();
+    data = new GraphData(parseInt(inputSelector.value));
+    graphDisplay = new GraphDisplay(data.data);
+    graphDisplay.createChart();
+  }
 });

@@ -10,7 +10,13 @@ async function insertionSort(data, delay) {
 
     await sortDelay(delay);
 
-    curr.classed("unsorted", false).classed("sorting", true);
+    debugger;
+    // curr.classed("unsorted", false).classed("sorting", true);
+    curr
+      .classed("unsorted", false)
+      .classed("sorted", true)
+      .classed("sorting", false);
+    debugger;
 
     let j = i - 1;
 
@@ -23,27 +29,38 @@ async function insertionSort(data, delay) {
 
       let jBar = d3.select("[data_id='" + j + "']");
 
+      debugger;
+    //   d3.select("[data_id='" + (j + 1) + "']")
+    //     .attr("height", jBar.attr("height"))
+    //     .attr("y", jBar.attr("y"));
+
       d3.select("[data_id='" + (j + 1) + "']")
         .attr("height", jBar.attr("height"))
-        .attr("y", jBar.attr("y"));
+        .attr("y", jBar.attr("y"))
+        .classed("sorted", false)
+        .classed("sorting", true)
+        .classed("unsorted", false);
 
       j--;
     }
 
     await sortDelay(delay);
 
+    debugger;
+
     d3.select("[data_id='" + (j + 1) + "']")
       .attr("height", currHeight)
       .attr("y", currY)
-      .classed("sorted", true)
-      .classed("sorting", false)
+      .classed("sorted", false)
+      .classed("sorting", true)
       .classed("unsorted", false);
   }
 
-    d3.selectAll("rect")
-      .classed("sorted", true)
-      .classed("unsorted", false)
-      .classed("sorting", false);
+  debugger;
+  d3.selectAll("rect")
+    .classed("sorted", true)
+    .classed("unsorted", false)
+    .classed("sorting", false);
 
   removeDisableButton(document.getElementsByClassName("footer__reset")[0]);
 }

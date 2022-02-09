@@ -70,17 +70,22 @@
       <div class="chart"></div>
       <div class="footer">
         <div class="algos">
-          <input type="button" value="Bubble Sort" class="algos__bubble_sort" />
+          <!-- <input type="button" value="Bubble Sort" class="algos__bubble_sort" /> -->
+          <select name="Algorithm Select" class="algo_select">
+            <option value="bubble sort">Bubble Sort</option>
+            <option value="insertion sort">Insertion Sort</option>
+          </select>
         </div>
         <div class="footer_buttons">
           <select name="Input Size" class="footer__input-size">
-            <option value="5" selected>5</option>
+            <option value="5">5</option>
             <option value="10">10</option>
-            <option value="50">50</option>
+            <option value="50" selected>50</option>
             <option value="100">100</option>
             <option value="250">250</option>
             <option value="500">500</option>
           </select>
+          <input type="button" value="Start" class="footer__start" />
           <input type="button" value="Reset" class="footer__reset" />
         </div>
       </div>
