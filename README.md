@@ -4,7 +4,9 @@
 
 The dataset of randomly sized elements is displayed as a bar chart that, when activated, will sort itself in the pattern of the chosen algorithm. Throughout this process, the color of each bar will change depending its sorted status.
 
-"Sort Visualizer" also contains a modal with details about the currently selected algorithm, showing information about how it sorts data, as well as the algorithm's common uses and its time/space complexity.
+"Sort Visualizer" also contains a modal with details about the currently selected algorithm, showing information about how it sorts data, as well as the algorithm's common uses and its time/space complexity. 
+
+Learn more about sorting algorithms <a href="https://ethangumin.github.io/sort_visualizer/">here.</a>
 
 <br>
 
@@ -27,7 +29,7 @@ In addition, this project includes:
 <br>
 
 <h1>Wireframes</h1>
-<img src="./images/wireframe2.png" alt="wireframe" />
+<img src="./images/app_screenshot.png" alt="home screen" />
 <br>
 <ul>
     <li>
