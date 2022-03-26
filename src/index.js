@@ -32,6 +32,14 @@ window.addEventListener("DOMContentLoaded", () => {
   let graphDisplay = new GraphDisplay(data.data);
   graphDisplay.createChart();
 
+  // create new chart on resize
+  document.addEventListener("change", () => {
+    if (inputSize !== inputSelector.value) {
+      resetChart();
+      inputSize = inputSelector.value;
+    }
+  });
+
   // activate sort
   startBtn.addEventListener("click", function () {
     disableButton(startBtn);
