@@ -51,8 +51,18 @@ const modalContent = {
     <p><b>Space Complexity:</b> O(1)</p>
   `,
   selectionSort: `
-    <p>THIS IS A SELECTION SORT BABABOOEY</p>
-  `
+    <p>
+      <b>Selection Sort</b> is an algorithm that divides the input array into two halves (sorted and unsorted). Initially, the unsorted half is empty, while the sorted half contains each element in the input array. As the selection sort iterates through the unsorted half of the input, it keeps track of the smallest value. Once the algorithm passes through each item, the smallest value is shifted to the end of the sorted half of the input.
+    </p>
+    <br />
+    <p>
+      Select Sort is a simple, inefficient sorting algorithm, but is useful for sorting small datasets.
+    </p>
+    <br />
+    <p><b>Time Complexity:</b> O(n^2)</p>
+    <br />
+    <p><b>Space Complexity:</b> O(1)</p>
+  `,
 };
 
 export { modalContent as default };
