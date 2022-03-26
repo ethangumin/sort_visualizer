@@ -12,7 +12,9 @@ async function selectionSort(data, delay) {
       d3.select("[data_id='" + k + "']")
         .classed("sorting", true)
         .classed("unsorted", false);
-      debugger;
+
+      await sortDelay(delay);
+
       if (
         parseInt(d3.select("[data_id='" + k + "']").attr("height")) <
         parseInt(d3.select("[data_id='" + min + "']").attr("height"))
@@ -21,16 +23,14 @@ async function selectionSort(data, delay) {
           .classed("sorting", false)
           .classed("unsorted", true);
         min = k;
-        debugger;
       } else {
         d3.select("[data_id='" + k + "']")
           .classed("sorting", false)
           .classed("unsorted", true);
-        debugger;
       }
     }
     if (min !== i) {
-    //   debugger;
+      
       let tempHeight = d3.select("[data_id='" + i + "']").attr("height");
       let tempY = d3.select("[data_id='" + i + "']").attr("y");
 
@@ -53,15 +53,14 @@ async function selectionSort(data, delay) {
         .classed("sorted", false)
         .classed("unsorted", true)
         .classed("sorting", false);
-      debugger;
     }
 
-    // temp
     d3.select("[data_id='" + i + "']")
       .classed("sorted", true)
       .classed("unsorted", false)
       .classed("sorting", false);
-      debugger;
+
+    await sortDelay(delay);
   }
 
   d3.selectAll("rect")
