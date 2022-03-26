@@ -50,6 +50,9 @@ const modalContent = {
     <br />
     <p><b>Space Complexity:</b> O(1)</p>
   `,
+  selectionSort: `
+    <p>THIS IS A SELECTION SORT BABABOOEY</p>
+  `
 };
 
 export { modalContent as default };

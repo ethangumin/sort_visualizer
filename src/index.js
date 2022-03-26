@@ -2,6 +2,7 @@ import GraphData from "./scripts/graph_data";
 import GraphDisplay from "./scripts/graph_display";
 import bubbleSort from "./scripts/sorting_algorithms/bubble_sort";
 import insertionSort from "./scripts/sorting_algorithms/insertion_sort";
+import selectionSort from "./scripts/sorting_algorithms/selection_sort";
 import modalContent from "./scripts/modal_content";
 import {
   disableButton,
@@ -59,6 +60,8 @@ window.addEventListener("DOMContentLoaded", () => {
       case "insertion sort":
         insertionSort(data.data, parseInt(speedSelector.value));
         break;
+      case "selection sort":
+        selectionSort(data.data, parseInt(speedSelector.value));
     }
   });
 
@@ -93,6 +96,10 @@ window.addEventListener("DOMContentLoaded", () => {
         break;
       case "insertion sort":
         modalContentDiv.innerHTML = modalContent.insertionSort;
+        break;
+      case "selection sort":
+        modalContentDiv.innerHTML = modalContent.selectionSort;
+        break;
     }
 
     modal.classList.add("modal__bg-active");
